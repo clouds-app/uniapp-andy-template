@@ -8,9 +8,13 @@
 				"navigationBarTitleText": "uniapp-andy-template"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/login/login",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
-		//"navigationStyle": "custom", // 全局禁用定义顶部 andy 20200617
+		"navigationStyle": "custom", // 全局禁用定义顶部 andy 20200617
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uniapp-andy-template",
 		"navigationBarBackgroundColor": "#F8F8F8",
