@@ -1,15 +1,18 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationStyle":"custom", // 自定义 单独页面使用 指定 头部
+				"navigationBarTitleText": "uniapp-andy-template"
 			}
 		}
 	],
 	"globalStyle": {
+		//"navigationStyle": "custom", // 全局禁用定义顶部 andy 20200617
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "uniapp-andy-template",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	}

@@ -6,43 +6,8 @@ import * as db from './db.js' //引入common
 // 需要登陆的，都写到这里，否则就是不需要登陆的接口
 const methodsToken = [
 	'user.info',
-	'user.editinfo',
-	'user.changeavatar',
 	'user.logout',
-	'user.addgoodsbrowsing',
-	'user.delgoodsbrowsing',
-	'user.goodsbrowsing',
-	'user.goodscollection',
-	'user.goodscollectionlist',
-	'user.vuesaveusership',
-	'user.saveusership',
-	'user.getshipdetail',
-	'user.setdefship',
-	'user.editship',
-	'user.removeship',
-	'user.getusership',
-	'user.pay',
-	'user.orderevaluate',
-	'user.getuserdefaultship',
-	'user.issign',
 	'user.sign',
-	'user.mypoint',
-	'user.userpointlog',
-	'user.getbankcardlist',
-	'user.getdefaultbankcard',
-	'user.addbankcard',
-	'user.removebankcard',
-	'user.setdefaultbankcard',
-	'user.getbankcardinfo',
-	'user.editpwd',
-	'user.forgotpwd',
-	'user.recommend',
-	'user.balancelist',
-	'user.sharecode',
-	'user.cash',
-	'user.cashlist',
-	'user.myinvite',
-	'user.activationinvite',
 ];
 
 const post = (method, data, callback) => {
@@ -378,124 +343,11 @@ export const login = (data, callback) => post('user.login', data, callback);
 // 用户信息
 export const userInfo = (data, callback) => post('user.info', data, callback);
 
-// 上传头像
-export const changeAvatar = (data, callback) => post('user.changeavatar', data, callback);
-
-// 编辑用户信息
-export const editInfo = (data, callback) => post('user.editinfo', data, callback);
-
-// 发送短信验证码
-export const sms = (data, callback) => post('user.sms', data, callback);
-
-// 短信验证码登录
-export const smsLogin = (data, callback) => post('user.smslogin', data, callback);
-
 // 退出登录
 export const logout = (data, callback) => post('user.logout', data, callback);
-
 
 // 获取用户的收货地址列表
 export const userShip = (data, callback) => post('user.getusership', data, callback);
 
-// 获取用户默认收货地址
-export const userDefaultShip = (data, callback) => post('user.getuserdefaultship', data, callback);
-
-// 存储用户收货地址
-export const saveUserShip = (data, callback) => post('user.vuesaveusership', data, callback);
-
-// 微信存储收货地址
-export const saveUserShipWx = (data, callback) => post('user.saveusership', data, callback);
-
-//获取区域ID
-export const getAreaId = (data, callback) => post('user.getareaid', data, callback);
-
-// 获取收货地址详情
-export const shipDetail = (data, callback) => post('user.getshipdetail', data, callback);
-
-// 收货地址编辑
-export const editShip = (data, callback) => post('user.editship', data, callback);
-
-// 收货地址删除
-export const removeShip = (data, callback) => post('user.removeship', data, callback);
-
-// 设置默认收货地址
-export const setDefShip = (data, callback) => post('user.setdefship', data, callback);
-
-// 添加商品浏览足迹
-export const addGoodsBrowsing = (data, callback) => post('user.addgoodsbrowsing', data, callback);
-
-// 删除商品浏览足迹
-export const delGoodsBrowsing = (data, callback) => post('user.delgoodsbrowsing', data, callback);
-
-// 获取商品浏览足迹
-export const goodsBrowsing = (data, callback) => post('user.goodsbrowsing', data, callback);
-
-// 商品收藏 关注/取消
-export const goodsCollection = (data, callback) => post('user.goodscollection', data, callback);
-
-// 获取商品收藏关注列表
-export const goodsCollectionList = (data, callback) => post('user.goodscollectionlist', data, callback);
-
-
-// 支付接口
-export const pay = (data, callback) => post('user.pay', data, callback);
-
-// 订单评价接口
-export const orderEvaluate = (data, callback) => post('user.orderevaluate', data, callback);
-
-// 判断是否签到
-export const isSign = (data, callback) => post('user.issign', data, callback);
-
 // 签到接口
 export const sign = (data, callback) => post('user.sign', data, callback);
-
-// 我的积分
-export const myPoint = (data, callback) => post('user.mypoint', data, callback);
-
-// 积分记录
-export const pointLog = (data, callback) => post('user.userpointlog', data, callback);
-
-// 获取店铺设置
-export const getSetting = (data, callback) => post('user.getsetting', data, callback);
-
-// 获取商户配置信息
-export const getSellerSetting = (data, callback) => post('user.getsellersetting', data, callback);
-
-// 获取我的银行卡列表
-export const getBankCardList = (data, callback) => post('user.getbankcardlist', data, callback);
-
-// 获取默认的银行卡
-export const getDefaultBankCard = (data, callback) => post('user.getdefaultbankcard', data, callback);
-
-// 添加银行卡
-export const addBankCard = (data, callback) => post('user.addbankcard', data, callback);
-
-// 删除银行卡
-export const removeBankCard = (data, callback) => post('user.removebankcard', data, callback);
-
-// 设置默认银行卡
-export const setDefaultBankCard = (data, callback) => post('user.setdefaultbankcard', data, callback);
-
-// 获取银行卡信息
-export const getBankCardInfo = (data, callback) => post('user.getbankcardinfo', data, callback);
-
-// 获取银行卡组织信息
-export const getBankCardOrganization = (data, callback) => post('user.getbankcardorganization', data, callback);
-
-// 用户修改密码
-export const editPwd = (data, callback) => post('user.editpwd', data, callback);
-
-// 用户找回密码
-export const forgotPwd = (data, callback) => post('user.forgotpwd', data, callback);
-
-// 获取用户余额明细
-export const getBalanceList = (data, callback) => post('user.balancelist', data, callback);
-
-// 用户推荐列表
-export const recommendList = (data, callback) => post('user.recommend', data, callback);
-
-// 邀请码
-export const shareCode = (data, callback) => post('user.sharecode', data, callback);
-
-// 用户提现
-export const userToCash = (data, callback) => post('user.cash', data, callback);

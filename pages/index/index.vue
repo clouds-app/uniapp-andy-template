@@ -1,14 +1,25 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+	<view class="page">
+		<scroll-view scroll-y="true" >
+			<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+			    <block slot="backText">返回</block>
+			    <block slot="content">导航栏</block>
+			</cu-custom>
+			
+			<view class="content">
+				<view class="text-area">
+					<text class="title">{{title}}</text>
+				</view>
+			</view>
+		</scroll-view>
 	</view>
+
 </template>
 
 <script>
+import cuCustom from '@/colorui/components/cu-custom.vue';
 	export default {
+		components: {cuCustom },
 		data() {
 			return {
 				title: 'Hello'
@@ -24,29 +35,5 @@
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+	
 </style>
