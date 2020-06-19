@@ -6,10 +6,10 @@ import * as Common from './config/common.js'
 import * as Db from './config/db.js'
 import * as Config from './config/config.js'
 import store from './store'
-// import './common/uni-H5Api'
+ import './common/uni-H5Api'
 // 全局导入头部控件
-// import cuCustom from './colorui/components/cu-custom.vue'
-// Vue.component('cu-custom',cuCustom)
+import cuCustom from './colorui/components/cu-custom.vue'
+Vue.component('cu-custom',cuCustom)
 
 Vue.config.productionTip = false
 Vue.prototype.$api = Api;

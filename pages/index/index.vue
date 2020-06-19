@@ -17,9 +17,7 @@
 </template>
 
 <script>
-import cuCustom from '@/colorui/components/cu-custom.vue';
 	export default {
-		components: {cuCustom },
 		data() {
 			return {
 				title: 'Hello'
