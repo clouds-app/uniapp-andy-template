@@ -10,12 +10,12 @@ const methodsToken = [
 	'user.sign',
 ];
 
-const post = (method, data, callback) => {
+export const post = (method, data, callback) => {
 	uni.showLoading({
 		title: '加载中'
 	});
 
-	// 判断token是否存在
+	// 判断token是否存在,需要登陆的页面路径
 	if (methodsToken.indexOf(method) >= 0) {
 		// 获取用户token
 		let userToken = db.get("userToken");
@@ -158,12 +158,12 @@ const pluginsPost = (method, data, callback) => {
 
 }
 
-const get = (url, callback) => {
+export const get = (url, callback) => {
 	uni.showLoading({
 		title: '加载中'
 	});
 	uni.request({
-		url: url,
+		url: apiBaseUrl+url,
 		header: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/x-www-form-urlencoded', //自定义请求头信息
@@ -333,12 +333,15 @@ export const uploadImage = (num, callback) => {
 
 // 获取店铺配置
 export const shopConfig = (callback) => get(apiBaseUrl + 'api/common/jshopconf', callback);
+// 获取账号加密token
+export const validatorToken = (callback) => get(apiBaseUrl + '/cls-api/user/validatorToken', callback);
 
 // 用户注册
 export const reg = (data, callback) => post('user.reg', data, callback);
 
 // 用户登录
-export const login = (data, callback) => post('user.login', data, callback);
+//export const login = (data, callback) => post('user.login', data, callback);
+export const login = (data, callback) => post(apiBaseUrl + 'api/common/jshopconf', data, callback);
 
 // 用户信息
 export const userInfo = (data, callback) => post('user.info', data, callback);

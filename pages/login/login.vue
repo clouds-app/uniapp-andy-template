@@ -27,7 +27,22 @@ export default {
 		};
 	},
 	methods: {
-		
+		login(){
+			var _self = this
+			let data = {
+			  userId:this.loginForm.phoneNo
+			}
+			_self.$api.validatorToken(data, res => {
+				debugger
+			  if (res) {
+			    // this.$db.set('userToken', res.data)
+			    // _this.redirectHandler()
+			  } else {
+			    // _this.$common.errorToShow(res.msg)
+			  }
+			})
+			console.log('===login==')
+		}
 	}
 };
 </script>
