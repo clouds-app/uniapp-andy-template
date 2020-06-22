@@ -16,8 +16,10 @@
 </template>
 
 <script>
+import baseMixin from '../mixins/index.js'
 import md5 from 'js-md5';
 export default {
+	mixins:[baseMixin],
 	data() {
 		return {
 			loginForm: {
@@ -28,19 +30,13 @@ export default {
 	},
 	methods: {
 		login(){
-			var _self = this
-			let data = {
+			let params = {
 			  userId:this.loginForm.phoneNo
 			}
-			_self.$api.validatorToken(data, res => {
-				debugger
-			  if (res) {
-			    // this.$db.set('userToken', res.data)
-			    // _this.redirectHandler()
-			  } else {
-			    // _this.$common.errorToShow(res.msg)
-			  }
-			})
+			let url = `/cls-api/user/validatorToken?userId`+this.loginForm.phoneNo
+			this.getDataBy(url,params).then(res=>{
+				
+			 })
 			console.log('===login==')
 		}
 	}

@@ -1,6 +1,6 @@
 import {
 	apiBaseUrl
-} from './config.js';
+} from '../config/config.js';
 import * as common from './common.js' //引入common
 import * as db from './db.js' //引入common
 // 需要登陆的，都写到这里，否则就是不需要登陆的接口

@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App'
-import * as Api from './config/api.js'
 
-import * as Common from './config/common.js'
-import * as Db from './config/db.js'
+import * as Api from './utils/api.js'
+import * as Common from './utils/common.js'
+import * as Db from './utils/db.js'
 import * as Config from './config/config.js'
+
 import store from './store'
  import './common/uni-H5Api'
 // 全局导入头部控件

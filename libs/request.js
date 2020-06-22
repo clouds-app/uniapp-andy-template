@@ -5,7 +5,7 @@ import config from '../config/config.js'
 //import router from './router.js'
 
 const request = uni_request({ // 有效配置项只有三个
-    baseURL: config.serverUrl, //baseURL
+    baseURL: config.baseUrl.dev, //baseURL
     timeout: 20000 ,// 超时时间
 	header:{
 		token:'123'

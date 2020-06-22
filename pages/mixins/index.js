@@ -28,10 +28,10 @@ export default {
 		}
   },
   methods: {
-	  // 通用查询数据
+	  // 通用post查询数据
 	   postDataBy(url,params){
 	  		this.isLoaddingData =true
-			this.toast.loading()
+			this.$common.loadToShow()
 	  		return new Promise((resolve, reject) => {
 	  			try{
 	  				request.post(url,params).then(res =>{
@@ -56,6 +56,34 @@ export default {
 	  			
 	  		})
 	   },
+	   // 通用post查询数据
+	    getDataBy(url,params){
+	   		this.isLoaddingData =true
+	   			this.toast.loading()
+	   		return new Promise((resolve, reject) => {
+	   			try{
+	   				request.get(url,params).then(res =>{
+	   					this.toast.hide()
+	   					resolve(res)
+	   					this.isLoaddingData =false
+	   				}).catch(err => {
+	   					this.toast.hide()
+	   					reject(err)
+	   					if(typeof err  === 'string'){
+	   						this.toast.message(err)
+	   					}else{
+	   						this.toast.message('系统繁忙，请稍后再试!')
+	   					}
+	   					this.isLoaddingData =false
+	   				})	
+	   			}catch(e){
+	   				//TODO handle the exception
+	   				this.toast.hide()
+	   				this.isLoaddingData =false
+	   			}
+	   			
+	   		})
+	    },
 	  // 格式化千分符,内置方法 toLocaleString 导致个别安卓微信不支持
 	  addThousandthSign(numStr)  {
 		  if(!!numStr){
